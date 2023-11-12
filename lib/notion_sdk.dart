@@ -1,4 +1,4 @@
-library notion_sdk;
+library flutter_notion_sdk;
 
 export 'notion_config.dart';
 export 'page_api.dart';
