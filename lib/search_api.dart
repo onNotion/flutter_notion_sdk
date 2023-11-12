@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:notion_sdk/notion_client.dart';
 
-class PagesAPI {
+class SearchApi {
   final NotionClient client = NotionClient();
   
   Future<Map<String, dynamic>> search({required String query}) async {
