@@ -70,6 +70,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
+  flutter_notion_sdk:
+    dependency: "direct main"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "1.0.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -123,13 +130,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
-  notion_sdk:
-    dependency: "direct main"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.0.1"
   path:
     dependency: transitive
     description:

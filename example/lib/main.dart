@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notion_sdk/notion_config.dart';
-import 'package:notion_sdk/page_api.dart';
+import 'package:flutter_notion_sdk/notion_sdk.dart';
 
 void main() {
   runApp(const MyApp());
