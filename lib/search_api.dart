@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:notion_sdk/notion_client.dart';
+import 'package:flutter_notion_sdk/notion_client.dart';
 
 class SearchApi {
   final NotionClient client = NotionClient();

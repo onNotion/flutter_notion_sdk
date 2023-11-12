@@ -1,4 +1,4 @@
-import 'package:notion_sdk/page_objects/formula/formula_model.dart';
+import 'package:flutter_notion_sdk/page_objects/formula/formula_model.dart';
 
 class FormulaNumber implements FormulaModel {
   final num value;

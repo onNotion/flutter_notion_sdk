@@ -1,4 +1,5 @@
-import 'package:notion_sdk/page_objects/formula/formula_model.dart';
+
+import 'package:flutter_notion_sdk/page_objects/formula/formula_model.dart';
 
 class FormulaBoolean implements FormulaModel {
   final bool value;

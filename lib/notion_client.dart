@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_notion_sdk/notion_config.dart';
 import 'package:http/http.dart' as http;
-import 'package:notion_sdk/notion_config.dart';
 
 class NotionClient {
   NotionClient();

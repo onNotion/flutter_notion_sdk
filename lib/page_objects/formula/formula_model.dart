@@ -1,8 +1,8 @@
-import 'package:notion_sdk/page_objects/formula/formula_boolean.dart';
-import 'package:notion_sdk/page_objects/formula/formula_date.dart';
-import 'package:notion_sdk/page_objects/formula/formula_number.dart';
-import 'package:notion_sdk/page_objects/formula/formula_string.dart';
-import 'package:notion_sdk/page_objects/formula/formula_type.dart';
+import 'package:flutter_notion_sdk/page_objects/formula/formula_boolean.dart';
+import 'package:flutter_notion_sdk/page_objects/formula/formula_date.dart';
+import 'package:flutter_notion_sdk/page_objects/formula/formula_number.dart';
+import 'package:flutter_notion_sdk/page_objects/formula/formula_string.dart';
+import 'package:flutter_notion_sdk/page_objects/formula/formula_type.dart';
 
 abstract class FormulaModel {
   fromMap(Map<String, dynamic> map);
