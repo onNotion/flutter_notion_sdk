@@ -7,11 +7,18 @@ class DatabaseAPI {
   Future<Map<String, dynamic>> createDatabase({
     required String pageId,
     required Map<String, dynamic> properties,
+    required String title,
   }) async {
     try {
       var body = {
         'parent': {'type': 'page_id', 'page_id': pageId},
         'properties': properties,
+        "title": [
+          {
+            "type": "text",
+            "text": {"content": title, "link": null}
+          }
+        ],
       };
 
       var response = await client.sendRequest(
