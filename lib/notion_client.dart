@@ -15,7 +15,7 @@ class NotionClient {
     var headers = {
       'Content-Type': 'application/json',
       'Notion-Version': NotionConfig.instance.notionVersion,
-      'Authorization': isNeedBearer
+      'Authorization': !isNeedBearer
           ? NotionConfig.instance.notionApiKey
           : 'Bearer ${NotionConfig.instance.notionApiKey}'
     };
