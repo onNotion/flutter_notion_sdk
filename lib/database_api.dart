@@ -42,6 +42,7 @@ class DatabaseAPI {
       var response = await client.sendRequest(
         endpoint: 'databases/$databaseId',
         method: 'GET',
+        isNeedBearer: true
       );
 
       if (response.statusCode == 200) {
@@ -61,14 +62,19 @@ class DatabaseAPI {
       required Map<String, dynamic> filter,
       required List<Map<String, dynamic>> sorts}) async {
     try {
-      var body = {
-        'filter': filter,
-        'sorts': sorts,
-      };
+      var body = filter != {}
+          ? {
+              'filter': filter,
+              'sorts': sorts,
+            }
+          : {
+              'sorts': sorts,
+            };
       var response = await client.sendRequest(
         endpoint: 'databases/$databaseId/query',
         method: 'POST',
         body: body,
+        isNeedBearer: true
       );
 
       if (response.statusCode == 200) {
@@ -95,6 +101,7 @@ class DatabaseAPI {
         endpoint: 'databases/$databaseId/query',
         method: 'POST',
         body: body,
+        isNeedBearer: true,
       );
 
       if (response.statusCode == 200) {
@@ -108,10 +115,10 @@ class DatabaseAPI {
       throw Exception(e.toString());
     }
   }
-  Future<Map<String, dynamic>> sort({
-    required String databaseId,
-     required List<Map<String, dynamic>> sorts
-  }) async {
+
+  Future<Map<String, dynamic>> sort(
+      {required String databaseId,
+      required List<Map<String, dynamic>> sorts}) async {
     try {
       var body = {
         'sorts': sorts,
@@ -120,6 +127,7 @@ class DatabaseAPI {
         endpoint: 'databases/$databaseId/query',
         method: 'POST',
         body: body,
+        isNeedBearer: true
       );
 
       if (response.statusCode == 200) {
@@ -135,13 +143,11 @@ class DatabaseAPI {
   }
 
   Future<Map<String, dynamic>> updateDatabase(
-      {required String databaseId, required Map<String,dynamic> updateJson}) async {
+      {required String databaseId,
+      required Map<String, dynamic> updateJson}) async {
     try {
       var response = await client.sendRequest(
-        endpoint: 'databases/$databaseId',
-        method: 'PATCH',
-        body: updateJson
-      );
+          endpoint: 'databases/$databaseId', method: 'PATCH', body: updateJson, isNeedBearer: true);
 
       if (response.statusCode == 200) {
         String responseBody = await response.stream.bytesToString();
@@ -160,10 +166,7 @@ class DatabaseAPI {
       required Map<String, dynamic> properties}) async {
     try {
       var response = await client.sendRequest(
-        endpoint: 'databases/$databaseId',
-        method: 'PATCH',
-        body: properties
-      );
+          endpoint: 'databases/$databaseId', method: 'PATCH', body: properties, isNeedBearer: true);
 
       if (response.statusCode == 200) {
         String responseBody = await response.stream.bytesToString();

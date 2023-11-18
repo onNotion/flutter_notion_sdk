@@ -10,11 +10,14 @@ class NotionClient {
     required String endpoint,
     required String method,
     Map<String, dynamic>? body,
+    bool isNeedBearer = false,
   }) async {
     var headers = {
       'Content-Type': 'application/json',
       'Notion-Version': NotionConfig.instance.notionVersion,
-      'Authorization': NotionConfig.instance.notionApiKey
+      'Authorization': isNeedBearer
+          ? NotionConfig.instance.notionApiKey
+          : 'Bearer ${NotionConfig.instance.notionApiKey}'
     };
     debugPrint('NotionClient: $method $endpoint');
     debugPrint('NotionClient: $headers');
