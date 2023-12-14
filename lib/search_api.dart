@@ -3,11 +3,11 @@ import 'package:flutter_notion_sdk/notion_client.dart';
 
 class SearchApi {
   final NotionClient client = NotionClient();
-  
+
   Future<Map<String, dynamic>> search({required String query}) async {
-    
     var body = {
       "query": "",
+      "filter": {"value": "page", "property": "object"},
       "sort": {"direction": "ascending", "timestamp": "last_edited_time"}
     };
     try {
@@ -28,6 +28,4 @@ class SearchApi {
       throw Exception(e.toString());
     }
   }
-
-  
 }
